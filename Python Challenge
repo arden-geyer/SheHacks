@@ -1,11 +1,13 @@
+import random
 # background checks
 correct = "no"
 rangea = "no"
 rangeb = "no"
 overallrange = "no"
+guessinrange = "no"
 # get and check range
 while overallrange == "no":
-    while rangea == "no": 
+    while rangea == "no":
         a = input("Enter the lower bound of your range: ")
         if a.isdigit():
             a = int(a)
@@ -13,40 +15,62 @@ while overallrange == "no":
             continue
         else:
             print("Error. Only Integers Allowed.")
-    while rangeb == "no": 
-        b = input( "Enter the upper bound of your range: ")
+    while rangeb == "no":
+        b = input("Enter the upper bound of your range: ")
         if b.isdigit():
             b = int(b)
             rangeb = "yes"
         else:
             print("Error. Only Integers Allowed.")
     if a >= b:
-        print ("Improper range try again")
+        print("Improper range try again")
         rangea = "no"
         rangeb = "no"
     else:
         overallrange = "yes"
 # randomizer
-import random
-value = random.randint(a,b)
+value = random.randint(a, b)
 # checking the guess
 while correct == "no":
     guess = input("Please guess a random number between the values you gave: ")
+    # is the guess a number
     if guess.isdigit():
         guess = int(guess)
-        if guess < a or guess > b:
-            print ("Value outside of range.")
+        # is guess in range
+        while guessinrange == "no":
+            if guess < a:
+                print("Try again. Value below range.")
+                guess = input("Please guess a random number between the values you gave: ")
+                if guess.isdigit():
+                    guess = int(guess)
+                else:
+                    print("Error. Only Integers Allowed.")
+                    continue
+            elif guess > b:
+                print("Try again. Value above range.")
+                guess = input("Please guess a random number between the values you gave: ")
+                if guess.isdigit():
+                    guess = int(guess)
+                else:
+                    print("Error. Only Integers Allowed.")
+                    continue
+                continue
+            else:
+                guessinrange = "yes"
+                continue
+        # is guess correct
         if value > guess:
-            print ( "Incorrect. The number is higher.")
-            continue 
+            print("Incorrect. The number is higher.")
+            guessinrange = "no"
+            continue
         elif value < guess:
-            print ("Incorrect. The number is lower.")
+            print("Incorrect. The number is lower.")
+            guessinrange = "no"
             continue
         if guess == value:
             correct = "yes"
-            print ("Congratulations! You guessed the number.")
+            print("Congratulations! You guessed the number.")
             break
-    else: 
-         print ("Error. Only Integers Allowed.")
-         continue
-    
+    else:
+        print("Error. Only Integers Allowed.")
+        continue
