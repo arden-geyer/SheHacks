@@ -51,9 +51,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
     </div>
     <div class="w3-third">
-      <img src="/w3images/steak.jpg" alt="Steak" style="width:100%">
+  <img src="./Reveiws/RichiesInterior.png" alt="Interior" style="width:100%">
+      <img src="./Reveiws/RichiesFood.png" alt="breakfast" style="width:100%">
+      <img src="./Reveiws/RichiesWrap.png" alt="greekfood" style="width: 100%;">
       <h3 id="Review2">Restaurant #2: Family Diner</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <p>Richies Family Restaurant is a quaint dinner style restaurant that serves authentic greek food as well as American classics. Located in London, Ontario it is know for its amazing breakfast deals and tasty dishes.</p>
     </div>
     <div class="w3-third">
       <img src="/w3images/cherries.jpg" alt="Cherries" style="width:100%">
